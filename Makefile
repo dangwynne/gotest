@@ -12,3 +12,8 @@ build-native: $(GOFILES)
 
 workdir/gotest: $(GOFILES)
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o workdir/gotest .
+
+test: test-all
+
+test-all:
+	@go test -v
